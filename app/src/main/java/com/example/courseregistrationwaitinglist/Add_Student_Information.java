@@ -55,18 +55,17 @@ public class Add_Student_Information extends AppCompatActivity {
                 String studentName = name.getText().toString();
                 String assignCourse = course.getText().toString();
 
-                // Validate that all fields have been filled
-                if (!TextUtils.isDigitsOnly(studentID)) {
+                if(studentID.equals("") && studentName.equals("") && assignCourse.equals("")) {
+                    errorText.setText("(Enter values in all fields!!!)");
+                }
+                else if (!TextUtils.isDigitsOnly(studentID)) {
                     errorText.setText("(Student ID must be a numeric value!!!)");
                 }
                 else if (studentName.length() < 3) {
-                    errorText.setText("(Name must be at least 3 characters long!!)");
+                    errorText.setText("(Name must be at least 3 characters long!!!)");
                 }
-                else if(studentID.equals("") ||
-                        studentName.equals("") ||
-                        assignCourse.equals(""))
-                {
-                    errorText.setText("(Enter values in all fields!!!)");
+                else if (assignCourse.length() < 3) {
+                    errorText.setText("(Enter a proper course title or code!!!)");
                 }else{
                     errorText.setText("");
                     // Call the add student method to insert the student's information into the database

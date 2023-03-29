@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    // Splash screen start button functionality;
+    // Start button functionality;
     public void tapToStart(View view){
         // Intent to navigate to the next activity;
         Intent startButton =  new Intent(this, Student_Registration_Waiting_List.class);
