@@ -14,25 +14,31 @@
         <activity
             android:name=".Delete_Student_Information"
             android:exported="false"
+            android:screenOrientation="sensor"
             android:parentActivityName=".Student_Registration_Waiting_List"/>
         <activity
             android:name=".Edit_Student_Information"
             android:exported="false"
+            android:screenOrientation="sensor"
             android:parentActivityName=".Student_Registration_Waiting_List"/>
         <activity
             android:name=".Assign_Student_Priority"
             android:exported="false"
+            android:screenOrientation="sensor"
             android:parentActivityName=".Student_Registration_Waiting_List"/>
         <activity
             android:name=".Add_Student_Information"
             android:exported="false"
+            android:screenOrientation="sensor"
             android:parentActivityName=".Student_Registration_Waiting_List"/>
         <activity
             android:name=".Student_Registration_Waiting_List"
             android:exported="false"
+            android:screenOrientation="sensor"
             android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="sensor"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
