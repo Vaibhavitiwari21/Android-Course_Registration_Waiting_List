@@ -60,9 +60,16 @@ public class Student_Waiting_List_DataBase extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("id", studentID);
-        contentValues.put("name", studentName);
-        contentValues.put("course", course);
-        contentValues.put("priority", priority);
+
+        if (!studentName.equals("")) {
+        contentValues.put("name", studentName);}
+
+        if (!course.equals("")) {
+        contentValues.put("course", course);}
+
+        if (!priority.equals("")) {
+            contentValues.put("priority", priority);
+        }
         Cursor cursor = db.rawQuery("Select * from StudentDetails where id = ?", new String[] {studentID});
         if(cursor.getCount()>0) {
             long result = db.update("StudentDetails", contentValues, "id=?", new String[]{studentID});
@@ -70,6 +77,7 @@ public class Student_Waiting_List_DataBase extends SQLiteOpenHelper {
         }else{
             return false;
         }
+
     }
 
     // Delete an existing student record method (Deletion)
